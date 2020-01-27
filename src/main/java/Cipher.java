@@ -15,5 +15,10 @@ public class Cipher {
         return this.userKey;
     }
 
+    String textEncrypt(String userInput , int userKey){
 
+        for(int t = 0; t < userInput.length(); t++ ){
+            
+        }
+    }
 }
