@@ -14,4 +14,6 @@ public class Cipher {
     public int getUserKey(){
         return this.userKey;
     }
+
+
 }
