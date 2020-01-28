@@ -18,13 +18,28 @@ public class Cipher {
     String textEncrypt(String userInput , int userKey){
            String cryptedMessage = " ";
         for(int t = 0; t < userInput.length(); t++ ){
-            int letterIndex = alphabet.indexOf();
+            char userInputCharacter = userInput.charAt(t);
+            boolean space = Character.isWhitespace(userInputCharacter);
+            boolean num = Character.isDigit(userInputCharacter);
+
+            int letterIndex = alphabet.indexOf(userInputCharacter);
             int letterPosition = letterIndex + userKey;
 
             if(letterPosition > 25){
-                cryptedMessage = cryptedMessage + alphabet.charAt(letterPosition % 26);
+                cryptedMessage+= alphabet.charAt(letterPosition % 26);
             }
-            else if
+            else if(space){
+                cryptedMessage += "";
         }
+            else if(num){
+                cryptedMessage += userInputCharacter;
+            }
+            else{
+                cryptedMessage += alphabet.charAt(letterPosition);
+            }
+            return cryptedMessage;
     }
 }
+
+
+
