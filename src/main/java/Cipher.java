@@ -16,9 +16,15 @@ public class Cipher {
     }
 
     String textEncrypt(String userInput , int userKey){
-
+           String cryptedMessage = " ";
         for(int t = 0; t < userInput.length(); t++ ){
-            
+            int letterIndex = alphabet.indexOf();
+            int letterPosition = letterIndex + userKey;
+
+            if(letterPosition > 25){
+                cryptedMessage = cryptedMessage + alphabet.charAt(letterPosition % 26);
+            }
+            else if
         }
     }
 }
