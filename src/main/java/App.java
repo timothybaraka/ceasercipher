@@ -11,6 +11,8 @@ public class App {
         System.out.println("Enter your encryption key ");
         String stringUserKey = myConsole.readLine();
         int userKey = Integer.parseInt(stringUserKey);
+        Cipher cipher = new Cipher(userInput,userKey);
+        System.out.println(cipher.textEncrypt(userInput,userKey));
 
         System.out.println("Thank you for your input");
 
