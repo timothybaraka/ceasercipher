@@ -19,8 +19,9 @@ public class Cipher {
 
     String textEncrypt(String userInput, int userKey) {
         String cryptedMessage = " ";
-        for (int t = 0; t < userInput.length(); t++) {
-            char userInputCharacter = userInput.charAt(t);
+
+        for (int i = 0; i < userInput.length(); i++) {
+            char userInputCharacter = userInput.charAt(i);
             boolean space = Character.isWhitespace(userInputCharacter);
             boolean num = Character.isDigit(userInputCharacter);
 
@@ -30,15 +31,43 @@ public class Cipher {
             if (letterPosition > 25) {
                 cryptedMessage += alphabet.charAt(letterPosition % 26);
             } else if (space) {
-                cryptedMessage += "";
+                cryptedMessage += ' ';
             } else if (num) {
                 cryptedMessage += userInputCharacter;
             } else {
                 cryptedMessage += alphabet.charAt(letterPosition);
             }
-            return cryptedMessage;
         }
+        return cryptedMessage;
     }
+
+    String textDecrypt(String userInput, int userKey) {
+        String decryptedMessage = " ";
+
+        for (int i = 0; i < userInput.length(); i++) {
+            char userInputCharacter = userInput.charAt(i);
+            boolean space = Character.isWhitespace(userInputCharacter);
+            boolean num = Character.isDigit(userInputCharacter);
+
+            int letterIndexi = alphabet.indexOf(userInputCharacter);
+            int letterPosition = letterIndexi - userKey;
+            int positionLetter = letterPosition + 26;
+
+            if (positionLetter  > 25) {
+                decryptedMessage += alphabet.charAt(positionLetter  % 26);
+            } else if (space) {
+                decryptedMessage += ' ';
+            } else if (num) {
+                decryptedMessage += userInputCharacter;
+            } else {
+                decryptedMessage += alphabet.charAt(positionLetter );
+            }
+        }
+       return decryptedMessage;
+   }
+
+}
+
 
 
 

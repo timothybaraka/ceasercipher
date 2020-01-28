@@ -20,4 +20,6 @@ public class CipherTest {
         Cipher testCipher = new Cipher("today",4);
         assertEquals(4,testCipher.getUserKey());
     }
-}
+
+
+    }
